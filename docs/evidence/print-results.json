@@ -1,0 +1,35 @@
+[
+  {
+    "file": "change-order-a4.pdf",
+    "pages": 2,
+    "pagePoints": [
+      595.91998,
+      842.88
+    ],
+    "textCharacters": 1663,
+    "outOfPageCharacters": 0,
+    "exactFeeAndApprovalAssertions": true
+  },
+  {
+    "file": "change-order-letter.pdf",
+    "pages": 2,
+    "pagePoints": [
+      612.0,
+      792.0
+    ],
+    "textCharacters": 1663,
+    "outOfPageCharacters": 0,
+    "exactFeeAndApprovalAssertions": true
+  },
+  {
+    "file": "change-order-long-a4.pdf",
+    "pages": 3,
+    "pagePoints": [
+      595.91998,
+      842.88
+    ],
+    "textCharacters": 11970,
+    "outOfPageCharacters": 0,
+    "exactFeeAndApprovalAssertions": true
+  }
+]

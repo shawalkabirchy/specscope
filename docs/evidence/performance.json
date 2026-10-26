@@ -1,0 +1,107 @@
+{
+  "measuredAt": "2026-10-26T09:05:09.895Z",
+  "url": "http://127.0.0.1:4173",
+  "browser": "Chromium 156.0.8078.4",
+  "viewport": "1440x1000",
+  "platform": "win32",
+  "osRelease": "10.0.26200",
+  "cpu": "13th Gen Intel(R) Core(TM) i7-1355U",
+  "logicalCpus": 12,
+  "memoryGiB": 16,
+  "counts": {
+    "projects": 50,
+    "requests": 1000,
+    "revisionsPerProject": 20,
+    "deliverablesPerRevision": 50
+  },
+  "backupBytes": 8084971,
+  "operation": "Input event to next animation frame containing the correct live fee",
+  "samples": 20,
+  "medianMilliseconds": 5.800000000745058,
+  "p95Milliseconds": 10.400000000372529,
+  "maximumMilliseconds": 10.599999999627471,
+  "targetMilliseconds": 200,
+  "measurements": [
+    {
+      "milliseconds": 6.300000000745058,
+      "correct": true
+    },
+    {
+      "milliseconds": 5.299999998882413,
+      "correct": true
+    },
+    {
+      "milliseconds": 4.699999999254942,
+      "correct": true
+    },
+    {
+      "milliseconds": 8.5,
+      "correct": true
+    },
+    {
+      "milliseconds": 10.599999999627471,
+      "correct": true
+    },
+    {
+      "milliseconds": 5.199999999254942,
+      "correct": true
+    },
+    {
+      "milliseconds": 7.100000001490116,
+      "correct": true
+    },
+    {
+      "milliseconds": 5.199999999254942,
+      "correct": true
+    },
+    {
+      "milliseconds": 4.900000000372529,
+      "correct": true
+    },
+    {
+      "milliseconds": 6.800000000745058,
+      "correct": true
+    },
+    {
+      "milliseconds": 9.5,
+      "correct": true
+    },
+    {
+      "milliseconds": 4.5,
+      "correct": true
+    },
+    {
+      "milliseconds": 4.199999999254942,
+      "correct": true
+    },
+    {
+      "milliseconds": 10.400000000372529,
+      "correct": true
+    },
+    {
+      "milliseconds": 7.600000001490116,
+      "correct": true
+    },
+    {
+      "milliseconds": 4.599999999627471,
+      "correct": true
+    },
+    {
+      "milliseconds": 8.099999999627471,
+      "correct": true
+    },
+    {
+      "milliseconds": 8.600000001490116,
+      "correct": true
+    },
+    {
+      "milliseconds": 4.400000000372529,
+      "correct": true
+    },
+    {
+      "milliseconds": 5.300000000745058,
+      "correct": true
+    }
+  ],
+  "limitations": "Reference desktop measurement with synthetic records; does not benchmark a cold load, full-workspace save, phone hardware, or a service-level guarantee."
+}

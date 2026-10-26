@@ -1,0 +1,17 @@
+{
+  "capturedAt": "2026-10-26T09:09:24.302Z",
+  "url": "http://127.0.0.1:4173",
+  "browser": "Chromium 156.0.8078.4",
+  "desktop": "1440x1000",
+  "mobile": "360x800",
+  "walkthroughSeconds": 32.506,
+  "platform": "win32",
+  "osRelease": "10.0.26200",
+  "cpu": "13th Gen Intel(R) Core(TM) i7-1355U",
+  "logicalCpus": 12,
+  "memoryGiB": 16,
+  "node": "v24.14.0",
+  "consoleErrors": [],
+  "encodedVideoSeconds": 32.48,
+  "videoInspection": "ffprobe; 1440x1000 WebM, plus a decoded midpoint frame and complete workflow assertions."
+}
