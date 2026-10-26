@@ -1,0 +1,68 @@
+{
+  "appId": "P06",
+  "repository": "https://github.com/shawalkabirchy/specscope",
+  "productionUrl": "https://specscope.pages.dev/",
+  "cloudflareProject": "specscope",
+  "productionBranch": "main",
+  "automaticProductionDeployments": true,
+  "previewDeployments": false,
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
+  "nodeVersion": "24.14.0",
+  "npmVersion": "11.14.1",
+  "applicationDeploymentValidated": {
+    "id": "7890b130-2f75-4d24-8c2b-f171b055af7d",
+    "url": "https://7890b130.specscope.pages.dev",
+    "environment": "production",
+    "deployment_trigger": {
+      "type": "ad_hoc",
+      "metadata": {
+        "branch": "main",
+        "commit_hash": "3b10ecdafede1626b091778696ce5346018eab9d",
+        "commit_message": "Build SpecScope local-first scope and quote workspace",
+        "commit_dirty": false
+      }
+    },
+    "latest_stage": {
+      "name": "deploy",
+      "started_on": "2026-10-26T15:05:22.175292Z",
+      "ended_on": "2026-10-26T15:05:34.769419Z",
+      "status": "success"
+    },
+    "stages": [
+      {
+        "name": "queued",
+        "started_on": "2026-10-26T15:03:35.976822Z",
+        "ended_on": "2026-10-26T15:03:35.980142Z",
+        "status": "success"
+      },
+      {
+        "name": "initialize",
+        "started_on": "2026-10-26T15:03:35.980142Z",
+        "ended_on": "2026-10-26T15:03:38.069716Z",
+        "status": "success"
+      },
+      {
+        "name": "clone_repo",
+        "started_on": "2026-10-26T15:03:38.069716Z",
+        "ended_on": "2026-10-26T15:03:41.305456Z",
+        "status": "success"
+      },
+      {
+        "name": "build",
+        "started_on": "2026-10-26T15:03:41.305456Z",
+        "ended_on": "2026-10-26T15:05:22.175292Z",
+        "status": "success"
+      },
+      {
+        "name": "deploy",
+        "started_on": "2026-10-26T15:05:22.175292Z",
+        "ended_on": "2026-10-26T15:05:34.769419Z",
+        "status": "success"
+      }
+    ]
+  },
+  "note": "This records the initial deployed application. Later documentation/test-only commits redeploy automatically on main.",
+  "httpEvidence": "deployed-http-results.json",
+  "browserEvidence": "deployed-browser-results.json"
+}

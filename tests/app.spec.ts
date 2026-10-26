@@ -526,7 +526,9 @@ test("never uploads request text, response text, or backup filenames", async ({
     }),
   ).toBeVisible();
   expect(
-    requests.every((request) => request.startsWith("http://127.0.0.1:4173/")),
+    requests.every((request) =>
+      request.startsWith(new URL(page.url()).origin + "/"),
+    ),
   ).toBe(true);
   expect(requests.join("\n")).not.toMatch(
     /PRIVATE_(REQUEST|RESPONSE|FILENAME)_SENTINEL|PRIVATE_FILENAME_398741/,
@@ -624,6 +626,9 @@ test("core screens and approval dialog pass automated accessibility checks", asy
   await page
     .getByRole("button", { name: "Record acceptance", exact: true })
     .click();
+  await expect(
+    page.getByRole("dialog", { name: "Record external approval" }),
+  ).toHaveCSS("opacity", "1");
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
     .analyze();

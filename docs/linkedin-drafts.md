@@ -56,7 +56,9 @@ It runs locally in the browser. No account, email integration, or AI classificat
 
 This is a self-initiated ConsoleLog Studio project, with synthetic data. It demonstrates the workflow rather than claiming customer results.
 
-The walkthrough and case study are ready in the portfolio package. Add the verified live URL after deployment; do not post an invented or unverified demo link.
+Try the fictional demo: https://specscope.pages.dev/
+
+The walkthrough and case study are ready in the portfolio package.
 
 If your team handles a similar approval workflow, I’d be interested in how you keep the agreement and the request connected.
 

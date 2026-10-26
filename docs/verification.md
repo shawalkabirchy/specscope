@@ -1,6 +1,6 @@
 # SpecScope acceptance results
 
-Verified on **26 October 2026** against the production static export, using fictional data. This is a self-initiated ConsoleLog Studio portfolio project. The local release is implemented and verified; public Cloudflare deployment and its HTTPS smoke checks are pending Pages authorization.
+Verified on **26 October 2026** against the production static export and [the live Cloudflare Pages application](https://specscope.pages.dev/), using fictional data. This is a self-initiated ConsoleLog Studio portfolio project. [The source repository](https://github.com/shawalkabirchy/specscope) is public, and pushes to `main` trigger production deployments.
 
 ## Recorded results
 
@@ -15,9 +15,22 @@ Verified on **26 October 2026** against the production static export, using fict
 | Calculation responsiveness | **10.6 ms maximum**, 10.4 ms p95, 5.8 ms median; 200 ms target | `npm run benchmark`; [raw measurements](evidence/performance.json) |
 | Screenshots and walkthrough | Pass; **32.48 seconds** of video | `npm run capture:portfolio`; [capture environment](evidence/capture-environment.json), [walkthrough](evidence/specscope-walkthrough.webm) |
 | A4 / Letter and long print | Pass | [print assertions](evidence/print-results.json); all seven rendered pages visually inspected |
-| Public deployment | **Pending** | Saved Cloudflare login lacks `pages:write`; see [deployment instructions](deployment.md) |
+| Public deployment | Pass | Git clone, static build, and asset publication succeeded; [deployment record](evidence/deployment.json) |
+| Live HTTP checks | Pass | Seven exported routes return 200, unknown route returns 404, trailing-slash redirects preserve query IDs, and security/cache headers are present; [HTTP evidence](evidence/deployed-http-results.json) |
+| Live browser checks | **22 distinct checks passed across two runs; 2 skipped** | [Main hosted run](evidence/deployed-browser-results.json), [six-check rerun](evidence/deployed-retry-results.json); the one SSL navigation error is explained below |
 
 The browser suite has 19 scenarios across five browser projects, with one worker and no retries. Clipboard read-back alone is skipped in Firefox and WebKit because those engines do not expose the same automation permission. The real clipboard is tested in Chromium, Chrome, and Edge. All other scenarios run in every configured browser.
+
+## Hosted release checks
+
+The hosted audit reused eight existing scenarios in Chromium, Firefox, and WebKit: all screen routes/console health, the complete personal-workspace workflow and reload, backup import/reset isolation, network privacy, clipboard, phone/desktop keyboard layouts, axe accessibility, and print emulation. It used a temporary Playwright configuration with `baseURL: "https://specscope.pages.dev"`, no local web server, the three bundled browser projects, and the existing tests in `tests/app.spec.ts`.
+
+    npm run test:e2e -- --config .cache/playwright-deployed.config.ts
+    npm run test:e2e -- --config .cache/playwright-deployed.config.ts --grep "never uploads request text|core screens and approval" --reporter=json
+
+The main hosted run finished with 21 passes, two intentional clipboard skips, and one WebKit `SSL connect error` before the privacy page loaded. The targeted rerun passed all six privacy/accessibility checks, including that WebKit case. Certificate validation remained enabled. Thus all 22 executable, distinct checks passed across the runs; the network failure is retained in the raw evidence rather than described as a clean first attempt.
+
+The audit also exposed two test assumptions, now corrected: network assertions compare with the active application's origin rather than a hardcoded localhost URL, and dialog contrast scanning waits for opacity 1 so it measures the settled dialog instead of a fade-in frame. No application behavior or security policy was weakened. Typecheck, lint, and formatting pass after these test changes.
 
 ## Environments
 
@@ -86,7 +99,6 @@ The PDFs were rendered with Poppler and inspected page by page. pypdf and pdfplu
 
 ## Remaining release limits
 
-- Public Cloudflare HTTPS routing, headers, and deployed smoke checks await an account with Pages write permission. No public URL or live deployment success is claimed.
 - Actual Safari, physical phones, assistive-technology sessions, and physical printing were not tested. Viewport simulation and WebKit are the available evidence.
 - Native clipboard read-back in Firefox/WebKit was not tested. Manual copy remains available if the browser blocks clipboard access.
 - Browser storage may be cleared or evicted. Backups are essential. There is no cross-device sync, service worker, or guaranteed cold offline reload.

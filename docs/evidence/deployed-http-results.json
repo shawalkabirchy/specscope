@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-26T15:06:46.981Z",
+  "baseUrl": "https://specscope.pages.dev",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "finalUrl": "https://specscope.pages.dev/",
+      "securityHeaders": true
+    },
+    {
+      "route": "/requests/",
+      "status": 200,
+      "finalUrl": "https://specscope.pages.dev/requests/",
+      "securityHeaders": true
+    },
+    {
+      "route": "/scope/",
+      "status": 200,
+      "finalUrl": "https://specscope.pages.dev/scope/",
+      "securityHeaders": true
+    },
+    {
+      "route": "/compare/?workspace=demo&requestId=10000000-0000-4000-8000-000000000101",
+      "status": 200,
+      "finalUrl": "https://specscope.pages.dev/compare/?workspace=demo&requestId=10000000-0000-4000-8000-000000000101",
+      "securityHeaders": true
+    },
+    {
+      "route": "/quote/?workspace=demo&requestId=10000000-0000-4000-8000-000000000102",
+      "status": 200,
+      "finalUrl": "https://specscope.pages.dev/quote/?workspace=demo&requestId=10000000-0000-4000-8000-000000000102",
+      "securityHeaders": true
+    },
+    {
+      "route": "/decisions/",
+      "status": 200,
+      "finalUrl": "https://specscope.pages.dev/decisions/",
+      "securityHeaders": true
+    },
+    {
+      "route": "/settings/",
+      "status": 200,
+      "finalUrl": "https://specscope.pages.dev/settings/",
+      "securityHeaders": true
+    }
+  ],
+  "missingRouteStatus": 404,
+  "trailingSlashPreservesQuery": true,
+  "staticAsset": {
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "status": 200,
+    "cacheControl": "public, max-age=31536000, immutable"
+  },
+  "licensesStatus": 200,
+  "headers": {
+    "contentSecurityPolicy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+    "referrerPolicy": "no-referrer",
+    "contentTypeOptions": "nosniff"
+  }
+}

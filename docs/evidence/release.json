@@ -90,5 +90,5 @@
     "settings/index.txt",
     "third-party-notices.txt"
   ],
-  "deployment": "Not deployed; Pages authorization required."
+  "deployment": "Live at https://specscope.pages.dev/; Git-integrated production builds use shawalkabirchy/specscope main. This ZIP is the separately captured local reference export."
 }

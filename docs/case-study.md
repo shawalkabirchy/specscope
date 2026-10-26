@@ -76,8 +76,8 @@ The zero-cost design uses free, commercially usable dependencies and static host
 
 [Watch the complete sample workflow](evidence/specscope-walkthrough.webm)
 
-Live deployment: awaiting Pages permission on the owner’s Cloudflare account.
+Live application: [specscope.pages.dev](https://specscope.pages.dev/).
 
-Source: included in this workspace; public repository publication has not been requested.
+Source: [shawalkabirchy/specscope on GitHub](https://github.com/shawalkabirchy/specscope). Pushing to `main` triggers a Cloudflare Pages production build.
 
 [Discuss a similar workflow with ConsoleLog Studio](https://consolelog.studio/)

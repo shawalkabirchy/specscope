@@ -4,6 +4,8 @@ A clearer scope. A better conversation.
 
 SpecScope helps freelancers and agencies compare a client request with agreed deliverables, record a human scope decision, estimate additional work, and prepare a change order. It is a **self-initiated ConsoleLog Studio portfolio project**, using fictional demo records.
 
+[Open SpecScope](https://specscope.pages.dev/) · [Source repository](https://github.com/shawalkabirchy/specscope)
+
 ## Run locally
 
 Use Node.js **24.14.0** and npm **11.14.1** (the reference environment).
@@ -99,9 +101,9 @@ This measures live fee calculation against the maximum supported record counts a
 
 ## Deployment and portfolio
 
-See docs/deployment.md for Cloudflare Pages static deployment and rollback. Use a free provider subdomain; no paid services or APIs are needed. Source repository publication is separate from deploying the static application.
+The public app runs on Cloudflare Pages at https://specscope.pages.dev/. The GitHub repository's `main` branch deploys automatically using `npm run build` and the `out` directory. See docs/deployment.md for the recorded settings, verification, and rollback procedure.
 
-The prepared `docs/evidence/specscope-static.zip` contains the contents of `out/` for dashboard direct upload. Public deployment is pending Pages write authorization.
+The prepared `docs/evidence/specscope-static.zip` contains the local reference export for Direct Upload to a separate Pages project. The live project builds from GitHub; dashboard drag-and-drop replacement is unavailable for Git-integrated projects.
 
 See docs/case-study.md and docs/linkedin-drafts.md for the portfolio package. Drafts are not posted automatically. No customer outcomes, savings, or commercial traction are claimed.
 

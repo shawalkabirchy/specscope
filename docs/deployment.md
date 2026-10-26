@@ -2,6 +2,18 @@
 
 SpecScope is a fully static Next.js export. It requires no Functions, Workers runtime, database, API keys, or environment secrets.
 
+## Live deployment
+
+- Application: https://specscope.pages.dev/
+- Source: https://github.com/shawalkabirchy/specscope
+- Cloudflare Pages project: `specscope`
+- Production branch: `main`; production deployments run automatically on pushes.
+- Build command: `npm run build`; output directory: `out`; repository root.
+- Build environment: `NODE_VERSION=24.14.0`, `NPM_VERSION=11.14.1`, `NEXT_TELEMETRY_DISABLED=1`.
+- Preview deployments and automatic pull-request comments are disabled. Web analytics is not configured.
+
+The initial production build and asset publication succeeded on 26 October 2026 through the connected Cloudflare account. [Acceptance results](verification.md) record live browser and HTTP checks.
+
 ## Build
 
 Use Node 24.14.0 and npm 11.14.1:
@@ -17,24 +29,23 @@ The deployment directory is **out**. Do not deploy .next or use next start.
 
 ## Git-connected Pages
 
-Connect the source repository in Cloudflare Pages. Choose a static Next.js export, set the build command to **npm run build**, and the output directory to **out**. Use the actual production branch of the repository. Keep the existing _headers file, including its security and static-asset cache headers.
+The source repository is connected to Cloudflare Pages. Future releases use `git push origin main`. Cloudflare installs the locked dependencies, runs **npm run build**, and publishes **out**. Keep the existing _headers file, including its security and static-asset cache headers.
 
 The app includes a real 404 page and fixed HTML routes. Do not add a blanket SPA rewrite: every application route has an exported HTML document.
 
-## Direct upload
+## Direct upload alternative
 
-With an account authorized for Pages:
+For a separately created Direct Upload project, use an account authorized for Pages:
 
     npx wrangler whoami
     npx wrangler pages project list
-    npx wrangler pages project create consolelog-specscope --production-branch main
-    npx wrangler pages deploy out --project-name consolelog-specscope --branch main
+    npx wrangler pages deploy out --project-name YOUR_DIRECT_UPLOAD_PROJECT --branch main
 
-Create that project only if it does not already belong to another application. Use the URL Cloudflare actually returns; subdomain availability is not assumed.
+Replace the project placeholder with that project's actual name. The live `specscope` project already exists and uses Git integration; do not create it again.
 
-A saved login was detected during implementation, but it does not grant **pages:write**. Deployment requires the owner to authorize the needed Pages permission. Do not use a different hosting product or broaden account permissions automatically to work around that boundary.
+The connected Cloudflare account completed deployment. A separate CLI login still needs Pages write permission before using Wrangler; no credential is stored in this repository.
 
-For dashboard Direct Upload, use the prepared [specscope-static.zip](evidence/specscope-static.zip). It contains the exported files at the archive root, including `index.html` and `_headers`. In Workers & Pages, create a Pages application using the drag-and-drop asset workflow and upload the ZIP. Dashboard upload accepts a ZIP or folder; Wrangler accepts the `out` folder. A Pages project configured for Git integration does not support dashboard drag-and-drop replacement. Use its Git build workflow instead.
+For a separate dashboard Direct Upload project, use the prepared [specscope-static.zip](evidence/specscope-static.zip). It contains the local reference export at the archive root, including `index.html` and `_headers`. Dashboard upload accepts a ZIP or folder; Wrangler accepts the `out` folder. The Git-integrated live project does not support dashboard drag-and-drop replacement. Use its Git build workflow instead.
 
 The package's file count, byte sizes, and SHA-256 are recorded in [release.json](evidence/release.json). Rebuild and repackage after changing application code; do not deploy a stale archive.
 
