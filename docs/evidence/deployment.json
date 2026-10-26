@@ -62,7 +62,8 @@
       }
     ]
   },
-  "note": "This records the initial deployed application. Later documentation/test-only commits redeploy automatically on main.",
+  "note": "This records the initial validated application. No automatic build was observed after the follow-up documentation push; later commits are explicitly deployed through the Pages API from current main.",
   "httpEvidence": "deployed-http-results.json",
-  "browserEvidence": "deployed-browser-results.json"
+  "browserEvidence": "deployed-browser-results.json",
+  "automaticPushTriggerVerified": false
 }

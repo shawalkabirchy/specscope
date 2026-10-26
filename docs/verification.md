@@ -1,6 +1,6 @@
 # SpecScope acceptance results
 
-Verified on **26 October 2026** against the production static export and [the live Cloudflare Pages application](https://specscope.pages.dev/), using fictional data. This is a self-initiated ConsoleLog Studio portfolio project. [The source repository](https://github.com/shawalkabirchy/specscope) is public, and pushes to `main` trigger production deployments.
+Verified on **26 October 2026** against the production static export and [the live Cloudflare Pages application](https://specscope.pages.dev/), using fictional data. This is a self-initiated ConsoleLog Studio portfolio project. [The source repository](https://github.com/shawalkabirchy/specscope) is public. Cloudflare builds `main`; the release was explicitly triggered through the Pages API.
 
 ## Recorded results
 
@@ -99,6 +99,7 @@ The PDFs were rendered with Poppler and inspected page by page. pypdf and pdfplu
 
 ## Remaining release limits
 
+- Automatic deployment is enabled in Cloudflare settings, but no build was observed after the documentation push. The latest commit is explicitly deployed through Pages; automatic push-triggered deployment still needs verification.
 - Actual Safari, physical phones, assistive-technology sessions, and physical printing were not tested. Viewport simulation and WebKit are the available evidence.
 - Native clipboard read-back in Firefox/WebKit was not tested. Manual copy remains available if the browser blocks clipboard access.
 - Browser storage may be cleared or evicted. Backups are essential. There is no cross-device sync, service worker, or guaranteed cold offline reload.

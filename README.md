@@ -101,7 +101,7 @@ This measures live fee calculation against the maximum supported record counts a
 
 ## Deployment and portfolio
 
-The public app runs on Cloudflare Pages at https://specscope.pages.dev/. The GitHub repository's `main` branch deploys automatically using `npm run build` and the `out` directory. See docs/deployment.md for the recorded settings, verification, and rollback procedure.
+The public app runs on Cloudflare Pages at https://specscope.pages.dev/. Cloudflare builds the GitHub repository's `main` branch using `npm run build` and the `out` directory. This release was triggered through the Pages API. Automatic deployment is enabled in project settings, but no build started after the follow-up push; push-triggered deployment still needs verification. See docs/deployment.md for the recorded settings, verification, and rollback procedure.
 
 The prepared `docs/evidence/specscope-static.zip` contains the local reference export for Direct Upload to a separate Pages project. The live project builds from GitHub; dashboard drag-and-drop replacement is unavailable for Git-integrated projects.
 

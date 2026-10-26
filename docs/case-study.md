@@ -78,6 +78,6 @@ The zero-cost design uses free, commercially usable dependencies and static host
 
 Live application: [specscope.pages.dev](https://specscope.pages.dev/).
 
-Source: [shawalkabirchy/specscope on GitHub](https://github.com/shawalkabirchy/specscope). Pushing to `main` triggers a Cloudflare Pages production build.
+Source: [shawalkabirchy/specscope on GitHub](https://github.com/shawalkabirchy/specscope). Cloudflare Pages builds the `main` branch. The release was triggered through the Pages API; automatic push-triggered deployment remains unverified.
 
 [Discuss a similar workflow with ConsoleLog Studio](https://consolelog.studio/)
