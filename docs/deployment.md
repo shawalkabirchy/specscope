@@ -7,14 +7,14 @@ SpecScope is a fully static Next.js export. It requires no Functions, Workers ru
 - Application: https://specscope.pages.dev/
 - Source: https://github.com/shawalkabirchy/specscope
 - Cloudflare Pages project: `specscope`
-- Production branch: `main`; automatic deployment is enabled in settings, but its push trigger is not verified.
+- Production branch: `main`; pushes to `main` deploy automatically (verified 20 November 2026).
 - Build command: `npm run build`; output directory: `out`; repository root.
 - Build environment: `NODE_VERSION=24.14.0`, `NPM_VERSION=11.14.1`, `NEXT_TELEMETRY_DISABLED=1`.
 - Preview deployments and automatic pull-request comments are disabled. Web analytics is not configured.
 
 The initial production build and asset publication succeeded on 26 October 2026 through the connected Cloudflare account. [Acceptance results](verification.md) record live browser and HTTP checks.
 
-No new build appeared after the follow-up documentation push, despite the enabled automatic-deployment setting. The latest release is therefore published by explicitly creating a Pages deployment from the current `main` branch. Future source changes should also be explicitly deployed until the GitHub integration's push trigger is verified. No GitHub App was uninstalled or granted broader access to work around this behavior.
+After the initial release, no build appeared for a follow-up documentation push, so releases on 26 October were published by explicitly creating a Pages deployment from `main`. On 20 November 2026 the push trigger was verified: merging pull requests #1 (`c1cb010`) and #2 (`f220216`) into `main` each started a production build within minutes, with no manual step. Production deployment `5c93178b` serves `f220216`. No GitHub App was uninstalled or granted broader access at any point.
 
 ## Build
 
@@ -31,7 +31,7 @@ The deployment directory is **out**. Do not deploy .next or use next start.
 
 ## Git-connected Pages
 
-The source repository is connected to Cloudflare Pages. Push changes with `git push origin main`, then verify that a deployment for that exact commit starts. If it does not, explicitly create a Pages deployment for branch `main` through the connected Cloudflare account or repair the repository's Git integration in the dashboard. Cloudflare installs the locked dependencies, runs **npm run build**, and publishes **out**. Keep the existing _headers file, including its security and static-asset cache headers.
+The source repository is connected to Cloudflare Pages. Pushing to `main` (including merging a pull request) starts a production build automatically. Confirm that a deployment for that exact commit appears, for example with `npx wrangler pages deployment list --project-name specscope --environment production`. If one does not, explicitly create a Pages deployment for branch `main` through the connected Cloudflare account or repair the repository's Git integration in the dashboard. Cloudflare installs the locked dependencies, runs **npm run build**, and publishes **out**. Keep the existing _headers file, including its security and static-asset cache headers.
 
 The app includes a real 404 page and fixed HTML routes. Do not add a blanket SPA rewrite: every application route has an exported HTML document.
 
