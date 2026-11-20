@@ -99,7 +99,7 @@ The PDFs were rendered with Poppler and inspected page by page. pypdf and pdfplu
 
 ## Remaining release limits
 
-- Automatic deployment is enabled in Cloudflare settings, but no build was observed after the documentation push. The latest commit is explicitly deployed through Pages; automatic push-triggered deployment still needs verification.
+- Automatic push-triggered deployment is verified: on 20 November 2026, merges to `main` (`c1cb010`, `f220216`) each started a production build without a manual step. Earlier, no build was observed after a documentation push, and those releases were explicitly deployed through Pages.
 - Actual Safari, physical phones, assistive-technology sessions, and physical printing were not tested. Viewport simulation and WebKit are the available evidence.
 - Native clipboard read-back in Firefox/WebKit was not tested. Manual copy remains available if the browser blocks clipboard access.
 - Browser storage may be cleared or evicted. Backups are essential. There is no cross-device sync, service worker, or guaranteed cold offline reload.

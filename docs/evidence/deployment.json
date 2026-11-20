@@ -62,8 +62,23 @@
       }
     ]
   },
-  "note": "This records the initial validated application. No automatic build was observed after the follow-up documentation push; later commits are explicitly deployed through the Pages API from current main.",
+  "note": "This records the initial validated application. No automatic build was observed after a follow-up documentation push in October; on 2026-11-20 merges to main (c1cb010, f220216) each started a production build automatically.",
   "httpEvidence": "deployed-http-results.json",
   "browserEvidence": "deployed-browser-results.json",
-  "automaticPushTriggerVerified": false
+  "automaticPushTriggerVerified": true,
+  "automaticPushTriggerEvidence": {
+    "verifiedOn": "2026-11-20",
+    "deployments": [
+      {
+        "id": "8d36d6ae-4387-448a-a841-bedaa2a9b229",
+        "commit": "c1cb010",
+        "environment": "production"
+      },
+      {
+        "id": "5c93178b-a9e9-4afa-a587-7082aa6e7d45",
+        "commit": "f220216",
+        "environment": "production"
+      }
+    ]
+  }
 }
