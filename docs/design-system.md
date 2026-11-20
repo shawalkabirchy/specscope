@@ -2,7 +2,8 @@
 
 The reference is design-reference.png, generated for this project from the approved light workspace direction. It is a design reference, not a screenshot of working software.
 
-- Canvas: warm white #f8f9f7; panels: white; text: navy #172b32; primary: deep teal #176b5b; selected backgrounds: pale teal; borders: cool gray.
+- Canvas: warm paper #f6f4ef; panels: white with a hairline shadow; text: ink navy #141c33; primary: cobalt #2443b8 (deep #142f8f for active text and totals); selected backgrounds: pale cobalt #eaeefc; borders: warm gray #e3dfd6. The original deep-teal direction was retired in favour of cobalt.
+- Interaction: buttons step on hover and press 1px on click, linked project cards lift 2px, links draw their underline, fields take a cobalt focus ring, the utility header stays pinned with a translucent backdrop. All motion rests under reduced motion.
 - Type: locally bundled Geist Variable, 14px controls, 15px body, 32px primary page titles, restrained weight and tracking.
 - Shell: 232px desktop sidebar, 60px utility header, persistent demo banner, 36px content gutters. On phones the sidebar becomes a menu, gutters shrink to 20px, and comparison panels stack.
 - Primary screen: project context strip, two adjacent bordered panels, scope on the left, request and human decision on the right. Fine borders and 8px corners; no heavy shadows or decorative charts.
