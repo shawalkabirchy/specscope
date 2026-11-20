@@ -840,24 +840,29 @@
 .deliverable-choices {
   gap: 12px;
 }
-.deliverable-choice {
+/* The label is the one card; the field inside it carries no border. */
+.deliverable-choice,
+.classification-option {
   display: block;
   width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+.deliverable-choice > [data-slot="field"],
+.classification-option > [data-slot="field"] {
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
 }
 .deliverable-choice > [data-slot="field"] {
   padding: 17px 16px;
   align-items: flex-start;
-  border: 1px solid var(--border);
-  border-radius: 6px;
   gap: 12px;
-  background: #fff;
-  transition:
-    background 0.15s,
-    border-color 0.15s;
 }
-.deliverable-choice:has([data-checked]) > [data-slot="field"] {
+.deliverable-choice:has([data-checked]) {
   background: var(--accent-soft);
-  border-color: var(--accent-border);
+  border-color: var(--accent-ring);
 }
 .deliverable-choice strong {
   font-size: 12px;
@@ -892,20 +897,13 @@
   gap: 8px;
 }
 .classification-option {
-  display: block;
-  width: 100%;
+  height: 100%;
 }
 .classification-option > [data-slot="field"] {
   height: 100%;
-  border: 1px solid var(--border);
-  border-radius: 6px;
   padding: 13px 10px;
   gap: 9px;
   align-items: flex-start;
-}
-.classification-option:has([data-checked]) > [data-slot="field"] {
-  background: var(--accent);
-  border-color: var(--accent-ring);
 }
 .classification-option [data-slot="radio-group-item"] {
   margin-top: 1px;
@@ -2009,29 +2007,35 @@
   background-size: 100% 1px;
 }
 .revision-item,
-.deliverable-choice > [data-slot="field"],
-.classification-option > [data-slot="field"] {
+.deliverable-choice,
+.classification-option {
   transition:
     background-color 0.15s ease,
     border-color 0.15s ease,
     box-shadow 0.15s ease;
 }
 .revision-item:hover,
-.deliverable-choice:hover > [data-slot="field"],
-.classification-option:hover > [data-slot="field"] {
+.deliverable-choice:hover,
+.classification-option:hover {
   border-color: var(--accent-ring);
+  background: var(--accent-soft);
 }
 .revision-item.selected,
-.classification-option:has([data-checked]) > [data-slot="field"] {
+.classification-option:has([data-checked]) {
   box-shadow: 0 0 0 3px rgb(36 67 184 / 0.1);
 }
 .revision-item.selected {
   background: var(--accent);
   border-color: var(--accent-ring);
 }
-.classification-option:has([data-checked]) > [data-slot="field"] {
+.classification-option:has([data-checked]) {
   background: var(--accent);
   border-color: var(--primary);
+}
+.deliverable-choice:has(:focus-visible),
+.classification-option:has(:focus-visible) {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgb(36 67 184 / 0.16);
 }
 .original-scope {
   border: 1px solid var(--border-subtle);
