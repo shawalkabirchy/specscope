@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "SpecScope — A clearer scope. A better conversation.",
   description:
     "Compare client requests with agreed scope, document your decisions, and create clear change orders. A local-first portfolio project by ConsoleLog Studio.",
-  icons: { icon: "/icon.svg" },
+  // Bump ?v= whenever icon.svg changes; browsers cache favicons aggressively.
+  icons: { icon: "/icon.svg?v=2" },
 };
 
 export default function RootLayout({
